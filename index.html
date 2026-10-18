@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Criador de personagem AQRPG">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>AQRPG — Criador de Personagem</title>
+</head>
+<body>
+  <main>
+    <section id="creatorPage" class="page creator-page">
+      <header class="hero">
+        <h1>Criador de Personagem</h1>
+        <h2>AQRPG</h2>
+      </header>
+
+      <form id="characterForm">
+        <div class="selection-fields">
+          <label class="field-row">
+            <span>Raça</span>
+            <select id="race" name="race" required>
+              <option value="" selected disabled>Caixa de Seleção de Opções</option>
+              <option value="Humano">Humano</option>
+              <option value="Elfo">Elfo</option>
+              <option value="Anão">Anão</option>
+              <option value="Outro">Outra</option>
+            </select>
+          </label>
+          <label class="field-row">
+            <span>Classe</span>
+            <select id="class" name="class" required>
+              <option value="" selected disabled>Caixa de Seleção de Opções</option>
+              <option value="Guerreiro">Guerreiro</option>
+              <option value="Mago">Mago</option>
+              <option value="Ladino">Ladino</option>
+              <option value="Outro">Outra</option>
+            </select>
+          </label>
+          <label class="field-row">
+            <span>Nível</span>
+            <select id="level" name="level" required>
+              <option value="" selected disabled>Caixa de Seleção de Opções</option>
+              <option value="1">Nível 1</option>
+              <option value="2">Nível 2</option>
+              <option value="3">Nível 3</option>
+              <option value="4">Nível 4</option>
+              <option value="5">Nível 5</option>
+              <option value="10">Nível 10</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="attributes" aria-labelledby="attributesTitle">
+          <h3 id="attributesTitle">Atributos</h3>
+          <div class="attribute-grid">
+            <label class="attribute">
+              <span>Físico</span>
+              <input name="physical" id="physical" type="number" min="0" max="999" placeholder="0" required>
+            </label>
+            <label class="attribute">
+              <span>Mental</span>
+              <input name="mental" id="mental" type="number" min="0" max="999" placeholder="0" required>
+            </label>
+            <label class="attribute">
+              <span>Social</span>
+              <input name="social" id="social" type="number" min="0" max="999" placeholder="0" required>
+            </label>
+          </div>
+        </section>
+
+        <p class="form-note">Preencha os campos para montar a ficha do personagem. As regras e os cálculos serão adicionados depois.</p>
+        <button class="primary-button" type="submit">Gerar personagem</button>
+      </form>
+    </section>
+
+    <section id="resultPage" class="page result-page" hidden>
+      <header class="hero result-hero">
+        <h1>AQRPG</h1>
+      </header>
+
+      <section class="calculated" aria-labelledby="calculatedTitle">
+        <h2 id="calculatedTitle">Estatísticas calculadas</h2>
+        <div class="stat-line"><span>PV</span><strong id="pvValue">—</strong></div>
+        <div class="stat-line"><span>Sistema de energia</span><strong id="energyValue">—</strong></div>
+      </section>
+
+      <section class="benefit-grid" aria-label="Benefícios do personagem">
+        <article class="benefit-column">
+          <h2>Raça</h2>
+          <div class="benefit-box"><p id="raceBenefits">Lista de coisas que a raça fornece</p></div>
+        </article>
+        <article class="benefit-column">
+          <h2>Classe</h2>
+          <div class="benefit-box"><p id="classBenefits">Lista de coisas que a classe fornece</p></div>
+        </article>
+        <article class="benefit-column">
+          <h2>Nível</h2>
+          <div class="benefit-box"><p id="levelBenefits">Lista de coisas que o nível atual fornece</p></div>
+        </article>
+      </section>
+
+      <p class="result-note">Nota: os benefícios por nível serão acumulados. Por exemplo, no nível 5, a ficha deverá mostrar os ganhos dos níveis anteriores, e não apenas os ganhos do nível atual.</p>
+      <div class="result-actions">
+        <button id="backButton" class="secondary-button" type="button">Voltar para a tela inicial</button>
+        <button id="editButton" class="primary-button" type="button">Editar personagem</button>
+      </div>
+    </section>
+  </main>
+  <footer><span>AQRPG</span><span>Esqueleto inicial • PWA</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>

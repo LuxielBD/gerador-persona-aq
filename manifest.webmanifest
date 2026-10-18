@@ -1,0 +1,19 @@
+{
+  "name": "AQRPG — Criador de Personagem",
+  "short_name": "AQRPG",
+  "description": "Criador de personagens para AQRPG",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
